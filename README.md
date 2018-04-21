@@ -11,3 +11,4 @@ so yes. that's why it takes long time.
 Rules
 1: you must use google chrome to play my game.
 2: dont use Zoom in & out in my game!
+3: have fun :)
