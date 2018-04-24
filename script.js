@@ -25,6 +25,9 @@ function keyblocker(e) {
   if (e.ctrlKey && e.keyCode == 65) {
     return false;
   }
+  if (e.keyCode == 27 && Game == true) {
+    window.open("ONAM_Launcher.html", "_self");
+  }
 }
 //End of key blocker
 
@@ -91,14 +94,79 @@ function intro() {
 	quitButton.innerHTML = "Quit";
 	document.body.appendChild(quitButton);
 	
-	mmmusic = new Audio("sounds/music.mp3");
-	mmmusic.play();
-	mmmusic.loop = true;
+	var ytbButton = document.createElement("img");
+	ytbButton.setAttribute("id", "ytbbutton");
+	ytbButton.setAttribute("src", "img/youtube.png");
+	ytbButton.setAttribute("width", "110px");
+	ytbButton.setAttribute("height", "80px");
+	ytbButton.setAttribute("onclick", "youtube()");
+	ytbButton.style.position = "absolute";
+	ytbButton.style.top = "570px";
+	ytbButton.style.left = "1250px";
+	document.body.appendChild(ytbButton);
+	
+	var pmcButton = document.createElement("img");
+	pmcButton.setAttribute("id", "pmcbutton");
+	pmcButton.setAttribute("src", "img/pmc.jpg");
+	pmcButton.setAttribute("width", "80px");
+	pmcButton.setAttribute("height", "80px");
+	pmcButton.setAttribute("onclick", "pmc()")
+	pmcButton.style.position = "absolute";
+	pmcButton.style.top = "570px";
+	pmcButton.style.left = "1150px";
+	document.body.appendChild(pmcButton);
+	
+	var musicButton = document.createElement("img");
+	musicButton.setAttribute("id", "musicbutton");
+	musicButton.setAttribute("src", "img/flashlight_button.png");
+	musicButton.setAttribute("width", "70px");
+	musicButton.setAttribute("height", "70px");
+	musicButton.setAttribute("onclick", "music()")
+	musicButton.style.position = "absolute";
+	musicButton.style.top = "30px";
+	musicButton.style.left = "1250px";
+	document.body.appendChild(musicButton);
+	
+	if (musicType == true) {
+	  mmmusic = new Audio("sounds/music.mp3");
+	  mmmusic.play();
+	  mmmusic.loop = true;
+	}
   }, introTime = 10000);
 }
 //End of intro
 
 //Main menu
+function youtube() {
+  snd = new Audio("sounds/click.ogg");
+  snd.play();
+  window.open("https://www.youtube.com/channel/UCVWC73HnvykSHxebex0JSYQ?view_as=subscriber");
+}
+
+function pmc() {
+  snd = new Audio("sounds/click.ogg");
+  snd.play();
+  window.open("https://www.planetminecraft.com/member/jackpone/");
+}
+
+var musicType = true;
+function music() {
+  if (musicType == true) {
+    snd = new Audio("sounds/click.ogg");
+    snd.play();
+    mmmusic.pause();
+	musicType = false;
+  }
+  else if(musicType == false) {
+    snd = new Audio("sounds/click.ogg");
+	snd.play();
+	mmmusic = new Audio("sounds/music.mp3");
+	mmmusic.play();
+	mmmusic.loop = true;
+	musicType = true;
+  }
+}
+
 function quit() {
   snd = new Audio("sounds/click.ogg");
   snd.play();
@@ -113,6 +181,12 @@ function quit() {
     document.body.removeChild(removecredit);
     var removequit = document.getElementById("quitbutton");
     document.body.removeChild(removequit);
+	var removeytb = document.getElementById("ytbbutton");
+    document.body.removeChild(removeytb);
+	var removepmc = document.getElementById("pmcbutton");
+    document.body.removeChild(removepmc);
+	var removemusic = document.getElementById("musicbutton");
+    document.body.removeChild(removemusic);
 	
 	mmmusic.pause();
   }, quitTime = 1);
@@ -130,6 +204,12 @@ function credits() {
   document.body.removeChild(removecredit);
   var removequit = document.getElementById("quitbutton");
   document.body.removeChild(removequit);
+  var removeytb = document.getElementById("ytbbutton");
+  document.body.removeChild(removeytb);
+  var removepmc = document.getElementById("pmcbutton");
+  document.body.removeChild(removepmc);
+  var removemusic = document.getElementById("musicbutton");
+  document.body.removeChild(removemusic);
   
   var loading = document.createElement("h2");
   loading.setAttribute("id", "loading");
@@ -197,7 +277,7 @@ function credits() {
     credit3.setAttribute("align", "center");
     credit3.style.paddingTop = "220px";
     credit3.style.color = "#FE2E2E";
-    credit3.innerHTML = "Musics & Sound Effects Created By.<br /><br />JackboneGamerTV & Mojang & Scott Cawthon";
+    credit3.innerHTML = "Musics & Sound Effects Created By.<br /><br />JackboneGamerTV & Mojang & Scott Cawthon & Paulina Pabis & Michael Pabis";
     document.body.appendChild(credit3);
   }, creditstime = 12000);
   setTimeout(function () {
@@ -257,9 +337,44 @@ function credits() {
 	quitButton.innerHTML = "Quit";
 	document.body.appendChild(quitButton);
 	
-	mmmusic = new Audio("sounds/music.mp3");
-	mmmusic.play();
-	mmmusic.loop = true;
+	var ytbButton = document.createElement("img");
+	ytbButton.setAttribute("id", "ytbbutton");
+	ytbButton.setAttribute("src", "img/youtube.png");
+	ytbButton.setAttribute("width", "110px");
+	ytbButton.setAttribute("height", "80px");
+	ytbButton.setAttribute("onclick", "youtube()");
+	ytbButton.style.position = "absolute";
+	ytbButton.style.top = "570px";
+	ytbButton.style.left = "1250px";
+	document.body.appendChild(ytbButton);
+	
+	var pmcButton = document.createElement("img");
+	pmcButton.setAttribute("id", "pmcbutton");
+	pmcButton.setAttribute("src", "img/pmc.jpg");
+	pmcButton.setAttribute("width", "80px");
+	pmcButton.setAttribute("height", "80px");
+	pmcButton.setAttribute("onclick", "pmc()")
+	pmcButton.style.position = "absolute";
+	pmcButton.style.top = "570px";
+	pmcButton.style.left = "1150px";
+	document.body.appendChild(pmcButton);
+	
+	var musicButton = document.createElement("img");
+	musicButton.setAttribute("id", "musicbutton");
+	musicButton.setAttribute("src", "img/flashlight_button.png");
+	musicButton.setAttribute("width", "70px");
+	musicButton.setAttribute("height", "70px");
+	musicButton.setAttribute("onclick", "music()")
+	musicButton.style.position = "absolute";
+	musicButton.style.top = "30px";
+	musicButton.style.left = "1250px";
+	document.body.appendChild(musicButton);
+	
+	if (musicType == true) {
+	  mmmusic = new Audio("sounds/music.mp3");
+	  mmmusic.play();
+	  mmmusic.loop = true;
+	}
   }, creditTime = 20000);
 }
 
@@ -272,6 +387,12 @@ function play() {
   document.body.removeChild(removecredit);
   var removequit = document.getElementById("quitbutton");
   document.body.removeChild(removequit);
+  var removeytb = document.getElementById("ytbbutton");
+  document.body.removeChild(removeytb);
+  var removepmc = document.getElementById("pmcbutton");
+  document.body.removeChild(removepmc);
+  var removemusic = document.getElementById("musicbutton");
+  document.body.removeChild(removemusic);
   
   var loading = document.createElement("h2");
   loading.setAttribute("id", "loading");
