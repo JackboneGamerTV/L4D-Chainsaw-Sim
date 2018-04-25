@@ -37,6 +37,23 @@ window.onload = intro;
 function intro() {
   var introTime = 10000;
   setTimeout(function () {
+    var divhtmlImg = document.createElement("div");
+	divhtmlImg.setAttribute("align", "center");
+	divhtmlImg.setAttribute("id", "htmlimg");
+	divhtmlImg.style.top = "200px";
+	document.body.appendChild(divhtmlImg);
+	
+    var htmlImg = document.createElement("img");
+	htmlImg.setAttribute("src", "img/html-js-css.png");
+	htmlImg.setAttribute("width", "900px");
+	htmlImg.setAttribute("height", "640px");
+	document.getElementById("htmlimg").appendChild(htmlImg);
+  }, introTime = 3000);
+  setTimeout(function () {
+    var removehtmlImg = document.getElementById("htmlimg");
+	document.body.removeChild(removehtmlImg);
+  }, introTime = 6000);
+  setTimeout(function () {
     var divintroImg = document.createElement("div");
 	divintroImg.setAttribute("align", "center");
 	divintroImg.setAttribute("id", "introimg");
@@ -48,11 +65,11 @@ function intro() {
 	introImg.setAttribute("width", "900px");
 	introImg.setAttribute("height", "640px");
 	document.getElementById("introimg").appendChild(introImg);
-  }, introTime = 3000);
+  }, introTime = 7000);
   setTimeout(function () {
     var removeintroImg = document.getElementById("introimg");
 	document.body.removeChild(removeintroImg);
-  }, introTime = 6000);
+  }, introTime = 10000);
   setTimeout(function () {
     var body = document.getElementById("body");
 	body.style.background = "url(img/menu_background.png) no-repeat center center fixed";
@@ -97,23 +114,23 @@ function intro() {
 	var ytbButton = document.createElement("img");
 	ytbButton.setAttribute("id", "ytbbutton");
 	ytbButton.setAttribute("src", "img/youtube.png");
-	ytbButton.setAttribute("width", "110px");
+	ytbButton.setAttribute("width", "140px");
 	ytbButton.setAttribute("height", "80px");
 	ytbButton.setAttribute("onclick", "youtube()");
 	ytbButton.style.position = "absolute";
 	ytbButton.style.top = "570px";
-	ytbButton.style.left = "1250px";
+	ytbButton.style.left = "1210px";
 	document.body.appendChild(ytbButton);
 	
 	var pmcButton = document.createElement("img");
 	pmcButton.setAttribute("id", "pmcbutton");
-	pmcButton.setAttribute("src", "img/pmc.jpg");
-	pmcButton.setAttribute("width", "80px");
-	pmcButton.setAttribute("height", "80px");
+	pmcButton.setAttribute("src", "img/pmc.png");
+	pmcButton.setAttribute("width", "90px");
+	pmcButton.setAttribute("height", "90px");
 	pmcButton.setAttribute("onclick", "pmc()")
 	pmcButton.style.position = "absolute";
 	pmcButton.style.top = "570px";
-	pmcButton.style.left = "1150px";
+	pmcButton.style.left = "1110px";
 	document.body.appendChild(pmcButton);
 	
 	var musicButton = document.createElement("img");
@@ -132,7 +149,7 @@ function intro() {
 	  mmmusic.play();
 	  mmmusic.loop = true;
 	}
-  }, introTime = 10000);
+  }, introTime = 14000);
 }
 //End of intro
 
@@ -340,23 +357,23 @@ function credits() {
 	var ytbButton = document.createElement("img");
 	ytbButton.setAttribute("id", "ytbbutton");
 	ytbButton.setAttribute("src", "img/youtube.png");
-	ytbButton.setAttribute("width", "110px");
+	ytbButton.setAttribute("width", "140px");
 	ytbButton.setAttribute("height", "80px");
 	ytbButton.setAttribute("onclick", "youtube()");
 	ytbButton.style.position = "absolute";
 	ytbButton.style.top = "570px";
-	ytbButton.style.left = "1250px";
+	ytbButton.style.left = "1210px";
 	document.body.appendChild(ytbButton);
 	
 	var pmcButton = document.createElement("img");
 	pmcButton.setAttribute("id", "pmcbutton");
-	pmcButton.setAttribute("src", "img/pmc.jpg");
-	pmcButton.setAttribute("width", "80px");
-	pmcButton.setAttribute("height", "80px");
+	pmcButton.setAttribute("src", "img/pmc.png");
+	pmcButton.setAttribute("width", "90px");
+	pmcButton.setAttribute("height", "90px");
 	pmcButton.setAttribute("onclick", "pmc()")
 	pmcButton.style.position = "absolute";
 	pmcButton.style.top = "570px";
-	pmcButton.style.left = "1150px";
+	pmcButton.style.left = "1110px";
 	document.body.appendChild(pmcButton);
 	
 	var musicButton = document.createElement("img");
